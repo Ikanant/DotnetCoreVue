@@ -1,45 +1,36 @@
 <template>
   <div class="container-fluid mt-4">
-    <h1 class="h1">Acronym Record Editor</h1>
+    <h1 class="h1">Search By Word</h1>
     <b-alert :show="loading" variant="info">Loading...</b-alert>
+    <template>
+      <div>
+        <b-form-tags
+          v-model="value"
+          tag-variant="primary"
+          tag-pills
+          size="lg"
+          separator=" "
+          placeholder="Enter new ACRONYMS separated by space"
+          class="mb-2"
+        ></b-form-tags>
+      </div>
+    </template>
     <b-row>
       <b-col>
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>ID</th>
               <th>Name</th>
               <th>Value</th>
-              <th>&nbsp;</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="record in records" :key="record.id">
-              <td>{{ record.id }}</td>
               <td>{{ record.name }}</td>
               <td>{{ record.value }}</td>
-              <td class="text-right">
-                <a href="#" @click.prevent="updateAcronymRecord(record)">Edit</a> -
-                <a href="#" @click.prevent="deleteAcronymRecord(record.id)">Delete</a>
-              </td>
             </tr>
           </tbody>
         </table>
-      </b-col>
-      <b-col lg="4">
-        <b-card :title="(model.id ? 'Edit Acronym ID#' + model.id : 'New Acronym Record')">
-          <form @submit.prevent="createAcronymRecord">
-            <b-form-group label="Name">
-              <b-form-input type="text" v-model="model.name"></b-form-input>
-            </b-form-group>
-            <b-form-group label="Value">
-              <b-form-input rows="4" v-model="model.value"></b-form-input>
-            </b-form-group>
-            <div>
-              <b-btn type="submit" variant="success">Save Record</b-btn>
-            </div>
-          </form>
-        </b-card>
       </b-col>
     </b-row>
   </div>
@@ -53,7 +44,8 @@
       return {
         loading: false,
         records: [],
-        model: {}
+        model: {},
+        value: []
       };
     },
     async created() {
@@ -61,6 +53,7 @@
     },
     methods: {
       async getAll() {
+        console.log("searching");
         this.loading = true
 
         try {

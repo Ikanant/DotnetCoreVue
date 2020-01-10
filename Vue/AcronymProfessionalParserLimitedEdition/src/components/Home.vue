@@ -12,7 +12,7 @@
         <p>{{instructionMessage}}</p>
 
         <div>
-          <b-button variant="info" to="/acronym-records">Search by Word</b-button>
+          <b-button variant="info" to="/search-by-word">Search by Word</b-button>
           <b-button :class="{disabled: true}" variant="info" to="/">Search by Paragraph</b-button>
           <b-button variant="outline-info" v-if="adminMode" to="/acronym-editor">Acronym Editor</b-button>
         </div>
