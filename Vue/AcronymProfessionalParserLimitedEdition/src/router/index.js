@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
-import Hello from '@/components/Hello'
-import AcronymRecords from '@/components/AcronymRecords'
+import Home from '@/components/Home'
+import AcronymEditor from '@/components/AcronymEditor'
 
 Vue.use(Router)
 
@@ -10,13 +10,13 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Home',
+      component: Home
     },
     {
-      path: '/acronym-records',
-      name: 'AcronymRecords',
-      component: AcronymRecords
+      path: '/acronym-editor',
+      name: 'AcronymEditor',
+      component: AcronymEditor
     }
   ]
 })

@@ -1,14 +1,11 @@
 <template>
   <div id="app">
     <header>
-      <b-navbar toggleable="md" type="light" variant="light">
-        <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
-        <b-navbar-brand to="/">Acronym Professional Parser Limited Edition</b-navbar-brand>
-        <b-collapse is-nav id="nav-collapse">
-          <b-navbar-nav>
-            <b-nav-item to="/acronym-records">Acronym Records</b-nav-item>
-          </b-navbar-nav>
-        </b-collapse>
+      <b-navbar toggleable="lg" type="dark" variant="info">
+        <b-navbar-brand to="/" right>
+          <img src="./assets/abrigo-logo-white.png" width="150" class="d-inline-block align-top"/>
+        </b-navbar-brand>
+        <b-navbar-brand to="/">Acronym Parser for Products in Loaded Environments</b-navbar-brand>
       </b-navbar>
     </header>
     <main>
@@ -18,26 +15,18 @@
 </template>
 
 <script>
-
   export default {
     name: 'app',
     data () {
-      return {
-        user: null
-      }
+      return {}
     },
     methods: {
       login () {
-
-      },
-      async logout () {
-
       }
     }
   }
 </script>
-
-<style>
+<style scoped>
 body {
   margin: 0;
 }
