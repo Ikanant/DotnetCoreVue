@@ -23,6 +23,6 @@ export default new Router({
       path: '/search-by-word',
       name: 'SearchByWord',
       component: SearchByWord
-    }
+    },
   ]
 })

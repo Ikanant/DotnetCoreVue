@@ -22,12 +22,14 @@
             <tr>
               <th>Name</th>
               <th>Value</th>
+              <th>Description</th>
             </tr>
           </thead>
           <tbody>
             <tr v-for="record in records" :key="record.id">
               <td>{{ record.name }}</td>
               <td>{{ record.value }}</td>
+              <td>{{ record.description }}</td>
             </tr>
           </tbody>
         </table>
