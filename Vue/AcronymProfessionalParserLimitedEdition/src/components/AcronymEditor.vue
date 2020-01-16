@@ -63,11 +63,11 @@ export default {
     this.getAll();
   },
   watch: {
-    'record.value': {
+    'model.value': {
       handler(newValue, oldValue) {
-        console.log(`You changed the record valye from ${oldValue} to ${newValue}`)
-      }
-    }
+        console.log(`You changed the record value from ${oldValue} to ${newValue}`)
+      },
+    },
   },
   methods: {
     async getAll() {
