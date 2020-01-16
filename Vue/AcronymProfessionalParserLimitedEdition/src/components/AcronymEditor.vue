@@ -62,6 +62,13 @@ export default {
   async created() {
     this.getAll();
   },
+  watch: {
+    'record.value': {
+      handler(newValue, oldValue) {
+        console.log(`You changed the record valye from ${oldValue} to ${newValue}`)
+      }
+    }
+  },
   methods: {
     async getAll() {
       this.loading = true;
@@ -86,6 +93,8 @@ export default {
           title: "Missing Data.",
           variant: "info"
         });
+
+        return;
       }
       if (!this.model.value) {
         this.formHasErrors = true;
@@ -93,9 +102,7 @@ export default {
           title: "Missing Data.",
           variant: "info"
         });
-      }
 
-      if (this.errors.length > 0) {
         return;
       }
 
