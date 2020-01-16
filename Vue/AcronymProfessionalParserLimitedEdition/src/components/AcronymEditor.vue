@@ -15,7 +15,7 @@
           </thead>
           <tbody>
             <tr v-for="record in records" :key="record.id">
-              <td>{{ record.name }}</td>
+              <td>{{ record.name | capitalized}}</td>
               <td>{{ record.value }}</td>
               <td>{{ record.description }}</td>
               <td class="text-right">
@@ -69,6 +69,13 @@ export default {
       },
     },
   },
+  filters: {
+    capitalized: function(value) {
+      if (!value) return '';
+
+      return value.toUpperCase();
+    }
+  },
   methods: {
     async getAll() {
       this.loading = true;
@@ -87,7 +94,7 @@ export default {
       const isUpdate = !!this.model.id;
 
       this.formHasErrors = false;
-      if (!this.model.name || this.model.name.indexOf("") > 0) {
+      if (!this.model.name || this.model.name.indexOf(" ") > 0) {
         this.formHasErrors = true;
         this.$bvToast.toast("Invalid acronym", {
           title: "Missing Data.",
