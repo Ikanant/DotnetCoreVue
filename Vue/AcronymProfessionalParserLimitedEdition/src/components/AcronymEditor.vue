@@ -25,6 +25,9 @@
             </tr>
           </tbody>
         </table>
+        <acronym-editor-record-table
+          :records="records"
+          @deleteAcronymRecord="deleteAcronymRecord"></acronym-editor-record-table>
       </b-col>
       <b-col lg="4">
         <b-card :title="(model.id ? 'Edit Acronym ID#' + model.id : 'New Acronym Record')">
@@ -50,8 +53,10 @@
 
 <script>
 import api from "@/services/AcronymRecordsApiService";
+import AcronymEditorRecordTable from "./AcronymEditorRecordTable";
 
 export default {
+  components: {AcronymEditorRecordTable},
   data() {
     return {
       loading: true,

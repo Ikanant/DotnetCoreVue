@@ -19,10 +19,6 @@
     name: 'app',
     data () {
       return {}
-    },
-    methods: {
-      login () {
-      }
     }
   }
 </script>
